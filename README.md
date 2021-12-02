@@ -25,6 +25,8 @@ $ sbatch knapsack_large_gprof.bat
 View the resulting slurm file for the answer. You should get an answer of ???. Run this command (replace ??? with the actual numbers):  
 $ cat slurm-???.out
 
-View results of profiling by running these commands:  
+Profile by running this command:   
 $ gprof knapsack_large_gprof gmon.out > analysis.txt
+
+View result by running this command:  
 $ cat analysis.txt
