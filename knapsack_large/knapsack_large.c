@@ -42,7 +42,7 @@ int main()
     int W2 = 1000;
     int n = sizeof(val) / sizeof(val[0]);
     int n2 = sizeof(val2) / sizeof(val2[0]);
-    printf("%d", knapSack(W, wt, val, n));
-    printf("%d", knapSack(W2, wt2, val2, n2));
+    printf("%d\n", knapSack(W, wt, val, n));
+    printf("%d\n", knapSack(W2, wt2, val2, n2));
     return 0;
 }
