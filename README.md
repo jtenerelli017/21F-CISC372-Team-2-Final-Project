@@ -13,14 +13,18 @@ $ sbatch knapsack.bat
 View the resulting slurm file for the answer. You should get an answer of 220. Run this command (replace ??? with the actual numbers):  
 $ cat slurm-???.out
 
-# 2. Run serial code with larger data set
-Open ./knapsack_large/. This directory contains a modified version of the serial code. It has a larger data set.
+# 2. Run/profile serial code with larger data set
+Open ./knapsack_large_gprof/. This directory contains a modified version of the serial code. It has a larger data set. It will also be profiled using GProf.
 
 Download the contents of the directory and place on the login node of bridges2. Run this command to compile:  
-$ gcc knapsack_large.c -o knapsack_large
+$ gcc -Wall -pg knapsack_large.c -o knapsack_large_gprof
 
 Run this command to execute the batch script:  
-$ sbatch knapsack_large.bat
+$ sbatch knapsack_large_gprof.bat
 
 View the resulting slurm file for the answer. You should get an answer of ???. Run this command (replace ??? with the actual numbers):  
 $ cat slurm-???.out
+
+View results of profiling by running these commands:  
+$ gprof knapsack_large_gprof gmon.out > analysis.txt
+$ cat analysis.txt
